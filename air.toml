@@ -1,0 +1,26 @@
+# Config file for Air (go-air)
+
+# Root directory for the application (relative or absolute path)
+root = "."
+tmp_dir = "tmp"
+
+[build]
+# The path to your main Go file
+cmd = "go build -o ./tmp/main main.go"
+# Binary file location for running
+bin = "./tmp/main"
+# Watch these directories for changes
+include_ext = ["go", "tpl", "html"]
+# Ignore these directories
+exclude_dir = ["assets", "tmp", "vendor", "node_modules"]
+# Delay between changes before a new build is triggered
+delay = 200
+
+[log]
+# Log file path (optional)
+log_file = "air.log"
+
+[serve]
+# Command to run the binary after building
+cmd = "./tmp/main"
+watch_delay = 200
